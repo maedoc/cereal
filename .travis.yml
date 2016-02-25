@@ -1,0 +1,9 @@
+addons:
+ apt:
+  packages:
+  - valgrind
+language: c
+install:
+  - gcc *.c
+script:
+  - valgrind --error-exitcode=1 --track-origins=yes --leak-check=full ./a.out
